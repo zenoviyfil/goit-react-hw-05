@@ -51,7 +51,6 @@ const MovieDetailsPage = () => {
       {error && <ErrorMessage error={error} />}
       {movie && (
         <div>
-          <Link to={backLinkRef.current} >Go Back</Link>
           <img src={`https://image.tmdb.org/movies/${movieId}/${poster_path}`} alt="movie poster" />
           <p>{title}</p>
           <p>{release_date}</p>
@@ -61,6 +60,7 @@ const MovieDetailsPage = () => {
         </div>
       )}
       <div>
+        <Link to={backLinkRef.current} >Go Back</Link>
         <Link to="cast">Cast</Link>
         <Link to="reviews">Movie Reviews</Link>
       </div>
