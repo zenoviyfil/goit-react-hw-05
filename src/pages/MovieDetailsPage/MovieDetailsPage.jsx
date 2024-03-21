@@ -36,15 +36,6 @@ const MovieDetailsPage = () => {
     getMovieData()
   }, [movieId])
 
-  // const {
-  //   title,
-  //   release_date,
-  //   overview,
-  //   genres,
-  //   poster_path,
-  //   vote_average
-  // } = movie;
-
   return (
     <div>
       {loading && <Loader />}
@@ -52,11 +43,18 @@ const MovieDetailsPage = () => {
       {movie && (
         <div>
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie poster" />
-          <p>{movie.title}</p>
+          <h3>{movie.title}</h3>
           <p>{movie.release_date}</p>
           <p>{movie.overview}</p>
-          <p>{movie.genres}</p>
-          <p>{movie.vote_average}</p>
+          <p>Genres:{" "}
+            {movie.genres &&
+              movie.genres
+                .map((genre) => {
+                  return genre.name;
+                })
+                .join(", ")}
+          </p>
+          <p>{movie.vote_average.toFixed(1)}/10</p>
         </div>
       )}
       <div>

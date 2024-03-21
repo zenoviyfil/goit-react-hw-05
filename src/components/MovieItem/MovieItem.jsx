@@ -1,5 +1,5 @@
 const MovieItem = ({ movie: {title, poster_path, release_date, vote_average} }) => {
-  const rating = Math.floor(vote_average)
+  const rating = vote_average.toFixed(1)
   
   return (
     <>
