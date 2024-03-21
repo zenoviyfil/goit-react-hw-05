@@ -1,13 +1,44 @@
-import { lazy } from 'react'
-import css from './HomePage.module.css'
+import { lazy, useEffect, useState } from 'react'
+import { trendReq } from '../../api-service'
+import toast from 'react-hot-toast'
 
 const MovieList = lazy(() => import('../../components/MovieList/MovieList'))
+const Loader = lazy(() => import('../../components/Loader/Loader'))
+const ErrorMessage = lazy(() => import('../../components/ErrorMessage/ErrorMessage'))
+
 
 const HomePage = () => {
+  const [movies, setMovies] = useState([])
+  const [loader, setLoader] = useState(false)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchTrendMovies = async () => {
+      setError(null)
+      setLoader(true)
+      setMovies([])
+      try {
+        const res = await trendReq()
+        setMovies(res)
+      } catch (error) {
+        setError(error.message)
+        toast.error("Oops, something went wrong!")
+      } finally {
+        setLoader(false)
+      }
+    }
+
+    fetchTrendMovies()
+  }, [])
+
   return (
-    <div>HomePage
-      <MovieList />
-    </div>
+    <main>
+      <div>HomePage
+        {loader && <Loader />}
+        {error && <ErrorMessage error={error}/>}
+        <MovieList movies={movies} />
+      </div>
+    </main>
   )
 }
 
