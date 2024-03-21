@@ -19,6 +19,8 @@ const HomePage = () => {
       setMovies([])
       try {
         const res = await trendReq()
+        if(!res) throw new Error(error.message)
+
         setMovies(res)
       } catch (error) {
         setError(error.message)
@@ -29,7 +31,7 @@ const HomePage = () => {
     }
 
     fetchTrendMovies()
-  }, [])
+  }, [error])
 
   return (
     <main>

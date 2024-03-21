@@ -1,4 +1,3 @@
-import css from './MoviesPage.module.css'
 
 import { lazy, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
