@@ -1,7 +1,6 @@
 import { lazy, useEffect, useState } from 'react'
 import { trendReq } from '../../api-service'
 import toast from 'react-hot-toast'
-import { BrowserRouter } from 'react-router-dom'
 
 const MovieList = lazy(() => import('../../components/MovieList/MovieList'))
 const Loader = lazy(() => import('../../components/Loader/Loader'))
@@ -34,13 +33,11 @@ const HomePage = () => {
 
   return (
     <main>
-      <BrowserRouter>
       <div>HomePage
         {loader && <Loader />}
         {error && <ErrorMessage error={error}/>}
         <MovieList movies={movies} />
       </div>
-      </BrowserRouter>
     </main>
   )
 }
