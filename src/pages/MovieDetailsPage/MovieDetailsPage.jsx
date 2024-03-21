@@ -9,7 +9,7 @@ const MovieCast = lazy(() => import('../../components/MovieCast/MovieCast'))
 const MovieReviews = lazy(() => import('../../components/MovieReviews/MovieReviews'))
 
 const MovieDetailsPage = () => {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const {movieId} = useParams()
@@ -36,14 +36,14 @@ const MovieDetailsPage = () => {
     getMovieData()
   }, [movieId])
 
-  const {
-    title,
-    release_date,
-    overview,
-    genres,
-    poster_path,
-    vote_average
-  } = movie;
+  // const {
+  //   title,
+  //   release_date,
+  //   overview,
+  //   genres,
+  //   poster_path,
+  //   vote_average
+  // } = movie;
 
   return (
     <div>
@@ -51,12 +51,12 @@ const MovieDetailsPage = () => {
       {error && <ErrorMessage error={error} />}
       {movie && (
         <div>
-          <img src={`https://image.tmdb.org/movies/${movieId}/${poster_path}`} alt="movie poster" />
-          <p>{title}</p>
-          <p>{release_date}</p>
-          <p>{overview}</p>
-          <p>{genres}</p>
-          <p>{vote_average}</p>
+          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie poster" />
+          <p>{movie.title}</p>
+          <p>{movie.release_date}</p>
+          <p>{movie.overview}</p>
+          <p>{movie.genres}</p>
+          <p>{movie.vote_average}</p>
         </div>
       )}
       <div>
