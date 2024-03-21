@@ -9,13 +9,13 @@ const ErrorMessage = lazy(() => import('../../components/ErrorMessage/ErrorMessa
 
 const HomePage = () => {
   const [movies, setMovies] = useState([])
-  const [loader, setLoader] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchTrendMovies = async () => {
       setError(null)
-      setLoader(true)
+      setLoading(true)
       setMovies([])
       try {
         const res = await trendReq()
@@ -24,7 +24,7 @@ const HomePage = () => {
         setError(error.message)
         toast.error("Oops, something went wrong!")
       } finally {
-        setLoader(false)
+        setLoading(false)
       }
     }
 
@@ -33,8 +33,9 @@ const HomePage = () => {
 
   return (
     <main>
-      <div>HomePage
-        {loader && <Loader />}
+      <div>
+        <h1>Most Popular On This Week</h1>
+        {loading && <Loader />}
         {error && <ErrorMessage error={error}/>}
         <MovieList movies={movies} />
       </div>

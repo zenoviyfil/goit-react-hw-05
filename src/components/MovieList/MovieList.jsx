@@ -6,7 +6,7 @@ export default function MovieList({ movies }) {
   const location = useLocation();
   return (
     <>
-      {movies.length > 0 && (
+      {Array.isArray(movies) && movies.length > 0 && (
         <ul className={css.moviesContainer}>
           {movies.map((movie) => (
             <li key={movie.id} className={css.movieItem}>
