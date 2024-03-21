@@ -75,12 +75,3 @@ const MovieDetailsPage = () => {
 }
 
 export default MovieDetailsPage
-
-{/* <>
-<Suspense fallback={<Loader />}>
-  <Routes>
-    <Route path=':movieId/cast' element={<MovieCast />} />
-    <Route path=':movieId/reviews' element={<MovieReviews />} />
-  </Routes>
-</Suspense>
-</> */}

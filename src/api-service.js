@@ -28,19 +28,19 @@ const queryReq = async (query) => {
 const movieDetailsReq = async (movieId) => {
     const res = await axios.get(`movie/${movieId}`, options)
 
-    return res.data.results
+    return res.data
 }
 
 const movieCastReq = async (movieId) => {
     const res = await axios.get(`movie/${movieId}/credits`, options)
 
-    return res.data.results
+    return res.data
 }
 
 const movieReviewsReq = async (movieId) => {
     const res = await axios.get(`movie/${movieId}/reviews`, options)
 
-    return res.data.results
+    return res.data
 }
 
 export { 
