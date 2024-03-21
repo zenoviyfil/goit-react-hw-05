@@ -1,6 +1,18 @@
 .moviesContainer {
     list-style-type: none;
     display: flex;
-    gap: 20px;
+    justify-content: space-around;
     flex-wrap: wrap;
+    padding-inline-start: 0;
+}
+
+.movieItem {
+    margin-top: 20px;
+}
+
+.movieLink {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
 }

@@ -21,7 +21,6 @@ const MovieDetailsPage = () => {
     const getMovieData = async () => {
       setLoading(true)
       setError(false)
-      setMovie([])
       try {
         const res = await movieDetailsReq(movieId)
         setMovie(res)
@@ -59,8 +58,8 @@ const MovieDetailsPage = () => {
       )}
       <div>
         <Link to={backLinkRef.current} >Go Back</Link>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Movie Reviews</Link>
+        <Link to="cast" state={{from: backLinkRef.current}}>Cast</Link>
+        <Link to="reviews" state={{from: backLinkRef.current}}>Movie Reviews</Link>
       </div>
       <Suspense fallback={<Loader />} >
         <Routes>

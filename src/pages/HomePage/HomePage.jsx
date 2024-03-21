@@ -1,6 +1,7 @@
+import toast from 'react-hot-toast'
+import css from './HomePage.module.css'
 import { lazy, useEffect, useState } from 'react'
 import { trendReq } from '../../api-service'
-import toast from 'react-hot-toast'
 
 const MovieList = lazy(() => import('../../components/MovieList/MovieList'))
 const Loader = lazy(() => import('../../components/Loader/Loader'))
@@ -35,7 +36,7 @@ const HomePage = () => {
 
   return (
     <main>
-      <div>
+      <div className={css.HomePage}>
         <h1>Most Popular On This Week</h1>
         {loading && <Loader />}
         {error && <ErrorMessage error={error}/>}
