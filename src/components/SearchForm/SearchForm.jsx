@@ -17,13 +17,14 @@ const SearchForm = ({ onSearch }) => {
 
   return (
     <>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={css.form}>
             <input 
             type="text"
             name='query'
             placeholder='search movie'
+            className={css.input}
             />
-            <button type='submit'>Search</button>
+            <button className={css.searchBtn} type='submit'>Search</button>
         </form>
     </>
   )

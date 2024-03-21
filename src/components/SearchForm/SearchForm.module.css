@@ -1,0 +1,38 @@
+  .form {
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
+
+  .input {
+    font-family: inherit;
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #000;
+    border-radius: 7px;
+    font-size: 16px;
+    background-color: #242424;
+  }
+  
+  .searchBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    position: absolute;
+    top: 1.5px;
+    right: -18px;
+    padding: 9.5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: inherit;
+    color: #000;
+    transition: all 0.25s ease-in-out;
+  }
+  
+  .searchBtn:hover {
+    background-color: white;
+  }

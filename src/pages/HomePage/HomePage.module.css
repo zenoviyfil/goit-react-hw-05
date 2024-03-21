@@ -1,4 +1,3 @@
-.HomePage {
-    border: 5px solid black;
-    border-radius: 10px;
+.homePageHeader {
+    border-bottom: 3px solid white;
 }

@@ -36,8 +36,8 @@ const HomePage = () => {
 
   return (
     <main>
-      <div className={css.HomePage}>
-        <h1>Most Popular On This Week</h1>
+      <div>
+        <h1 className={css.homePageHeader}>Most Popular On This Week</h1>
         {loading && <Loader />}
         {error && <ErrorMessage error={error}/>}
         <MovieList movies={movies} />
