@@ -43,7 +43,7 @@ const MovieDetailsPage = () => {
     genres,
     poster_path,
     vote_average
-  } = movie || {};
+  } = movie;
 
   return (
     <div>
