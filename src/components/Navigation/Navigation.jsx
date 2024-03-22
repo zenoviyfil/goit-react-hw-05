@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
 };
+
 const Navigation = () => {
   return (
     <header className={css.navHeader}>

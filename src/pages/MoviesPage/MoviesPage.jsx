@@ -1,4 +1,3 @@
-
 import { lazy, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { queryReq } from '../../api-service'
@@ -49,9 +48,9 @@ const MoviesPage = () => {
 
   return (
     <main>
-      <SearchForm onSearch={handleSearch} />
       {loading && <Loader />}
       {error && <ErrorMessage error={error} />}
+      <SearchForm onSearch={handleSearch} />
       <MovieList movies={movies} />
     </main>
   )
