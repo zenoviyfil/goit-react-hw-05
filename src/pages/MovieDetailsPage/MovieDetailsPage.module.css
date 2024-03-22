@@ -1,3 +1,13 @@
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .link {
     text-decoration: none;
     position: relative;

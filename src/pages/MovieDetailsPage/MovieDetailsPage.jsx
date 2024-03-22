@@ -49,18 +49,20 @@ const MovieDetailsPage = () => {
       {movie && (
         <div>
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie poster" />
-          <h3>{movie.title}</h3>
-          <p>{movie.release_date}</p>
-          <p>{movie.overview}</p>
-          <p>Genres:{" "}
-            {movie.genres &&
-              movie.genres
-              .map((genre) => {
-                return genre.name;
-              })
-              .join(", ")}
-          </p>
-          <p>{movie.vote_average.toFixed(1)}/10</p>
+          <div className={css.description}>
+            <h2>{movie.title}</h2>
+            <p><b>Release Date</b>{": "}{movie.release_date}</p>
+            <p><b>Overview</b>{": "}{movie.overview}</p>
+            <p><b>Genres</b>{": "}
+              {movie.genres &&
+                movie.genres
+                .map((genre) => {
+                  return genre.name;
+                })
+                .join(", ")}
+            </p>
+            <p><b>Rating</b>{": "}{movie.vote_average.toFixed(1)}/10</p>
+          </div>
         </div>
       )}
       <div>
