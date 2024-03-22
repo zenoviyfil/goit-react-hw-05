@@ -3,7 +3,7 @@ import css from './MovieDetailsPage.module.css'
 import clsx from "clsx";
 
 import { Suspense, lazy, useEffect, useRef, useState } from "react"
-import { NavLink, Route, Routes, useLocation, useParams } from "react-router-dom"
+import { Link, NavLink, Route, Routes, useLocation, useParams } from "react-router-dom"
 import { movieDetailsReq } from "../../api-service"
 
 const Loader = lazy(() => import('../../components/Loader/Loader'))
@@ -68,7 +68,7 @@ const MovieDetailsPage = () => {
       <div>
         <NavLink to="cast" state={{from: backLinkRef.current}} className={buildLinkClass}>Cast</NavLink>
         <NavLink to="reviews" state={{from: backLinkRef.current}} className={buildLinkClass}>Movie Reviews</NavLink>
-        <NavLink to={backLinkRef.current}  className={buildLinkClass}>Go Back</NavLink>
+        <Link className={css.link} to={backLinkRef.current}>Go Back</Link>
       </div>
       <Suspense fallback={<Loader />} >
         <Routes>
