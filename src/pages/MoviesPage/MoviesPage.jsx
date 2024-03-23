@@ -26,8 +26,6 @@ const MoviesPage = () => {
       setMovies([])
       try {
         const res = await queryReq(query)
-        if(!res) throw new Error(error.message)
-
         setMovies(res)
       } catch (error) {
         setError(error.message)

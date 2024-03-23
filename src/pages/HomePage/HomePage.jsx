@@ -40,7 +40,7 @@ const HomePage = () => {
         <h1 className={css.homePageHeader}>Most Popular On This Week</h1>
         {loading && <Loader />}
         {error && <ErrorMessage error={error}/>}
-        <MovieList movies={movies} />
+        {movies && movies.length > 0 && <MovieList movies={movies} />}
       </div>
     </main>
   )
